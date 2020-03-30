@@ -7,7 +7,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class AnimatedProgressBar {
 
-  @Prop() progress = 0;
+  @Prop({ reflect: true }) progress = 0;
 
   render() {
     return (
