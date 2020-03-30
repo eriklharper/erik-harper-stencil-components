@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border: 1px solid #CCC;
+}
+div {
+  height: 100%;
+  background-color: blue;
+  transition: width 0.5s;
+}

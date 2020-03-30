@@ -10,6 +10,9 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface ErikAnimatedProgressBar {
+    'progress': number;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -29,17 +32,27 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLErikAnimatedProgressBarElement extends Components.ErikAnimatedProgressBar, HTMLStencilElement {}
+  var HTMLErikAnimatedProgressBarElement: {
+    prototype: HTMLErikAnimatedProgressBarElement;
+    new (): HTMLErikAnimatedProgressBarElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
   interface HTMLElementTagNameMap {
+    'erik-animated-progress-bar': HTMLErikAnimatedProgressBarElement;
     'my-component': HTMLMyComponentElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface ErikAnimatedProgressBar {
+    'progress'?: number;
+  }
   interface MyComponent {
     /**
     * The first name
@@ -56,6 +69,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'erik-animated-progress-bar': ErikAnimatedProgressBar;
     'my-component': MyComponent;
   }
 }
@@ -66,6 +80,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'erik-animated-progress-bar': LocalJSX.ErikAnimatedProgressBar & JSXBase.HTMLAttributes<HTMLErikAnimatedProgressBarElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
     }
   }
