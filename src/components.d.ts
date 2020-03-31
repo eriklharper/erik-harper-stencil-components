@@ -13,6 +13,10 @@ export namespace Components {
   interface ErikAnimatedProgressBar {
     'progress': number;
   }
+  interface ErikToggleButton {
+    'checked': boolean;
+    'tabIndex': number;
+  }
 }
 
 declare global {
@@ -23,8 +27,15 @@ declare global {
     prototype: HTMLErikAnimatedProgressBarElement;
     new (): HTMLErikAnimatedProgressBarElement;
   };
+
+  interface HTMLErikToggleButtonElement extends Components.ErikToggleButton, HTMLStencilElement {}
+  var HTMLErikToggleButtonElement: {
+    prototype: HTMLErikToggleButtonElement;
+    new (): HTMLErikToggleButtonElement;
+  };
   interface HTMLElementTagNameMap {
     'erik-animated-progress-bar': HTMLErikAnimatedProgressBarElement;
+    'erik-toggle-button': HTMLErikToggleButtonElement;
   }
 }
 
@@ -32,9 +43,14 @@ declare namespace LocalJSX {
   interface ErikAnimatedProgressBar {
     'progress'?: number;
   }
+  interface ErikToggleButton {
+    'checked'?: boolean;
+    'tabIndex'?: number;
+  }
 
   interface IntrinsicElements {
     'erik-animated-progress-bar': ErikAnimatedProgressBar;
+    'erik-toggle-button': ErikToggleButton;
   }
 }
 
@@ -45,6 +61,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'erik-animated-progress-bar': LocalJSX.ErikAnimatedProgressBar & JSXBase.HTMLAttributes<HTMLErikAnimatedProgressBarElement>;
+      'erik-toggle-button': LocalJSX.ErikToggleButton & JSXBase.HTMLAttributes<HTMLErikToggleButtonElement>;
     }
   }
 }

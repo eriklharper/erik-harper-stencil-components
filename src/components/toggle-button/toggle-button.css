@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+ :host([hidden]) { display: none }
+
+.toggle-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: blue;
+  position: absolute;
+}
+.off {
+  left: 0;
+}
+.on {
+  right: 0;
+}
+.toggle-circle-container {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 17px;
+  border-radius: 500px;
+  background-color: white;
+  border: 1px solid blue;
+  position: relative;
+}

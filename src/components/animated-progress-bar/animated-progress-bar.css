@@ -4,6 +4,7 @@
   width: 100%;
   border: 1px solid #CCC;
 }
+ :host([hidden]) { display: none }
 div {
   height: 100%;
   background-color: blue;
