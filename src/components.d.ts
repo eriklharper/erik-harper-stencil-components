@@ -15,6 +15,7 @@ export namespace Components {
   }
   interface ErikToggleButton {
     'checked': boolean;
+    'disabled': boolean;
     'tabIndex': number;
   }
 }
@@ -45,6 +46,7 @@ declare namespace LocalJSX {
   }
   interface ErikToggleButton {
     'checked'?: boolean;
+    'disabled'?: boolean;
     'tabIndex'?: number;
   }
 
