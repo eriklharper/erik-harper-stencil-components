@@ -13,6 +13,15 @@ export namespace Components {
   interface ErikAnimatedProgressBar {
     'progress': number;
   }
+  interface ErikRadioButton {
+    'checked': boolean;
+    'name': string;
+    'scale': "small" | "medium" | "large";
+  }
+  interface ErikRadioGroup {
+    'label': string;
+    'name': string;
+  }
   interface ErikToggleButton {
     'checked': boolean;
     'disabled': boolean;
@@ -29,6 +38,18 @@ declare global {
     new (): HTMLErikAnimatedProgressBarElement;
   };
 
+  interface HTMLErikRadioButtonElement extends Components.ErikRadioButton, HTMLStencilElement {}
+  var HTMLErikRadioButtonElement: {
+    prototype: HTMLErikRadioButtonElement;
+    new (): HTMLErikRadioButtonElement;
+  };
+
+  interface HTMLErikRadioGroupElement extends Components.ErikRadioGroup, HTMLStencilElement {}
+  var HTMLErikRadioGroupElement: {
+    prototype: HTMLErikRadioGroupElement;
+    new (): HTMLErikRadioGroupElement;
+  };
+
   interface HTMLErikToggleButtonElement extends Components.ErikToggleButton, HTMLStencilElement {}
   var HTMLErikToggleButtonElement: {
     prototype: HTMLErikToggleButtonElement;
@@ -36,6 +57,8 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'erik-animated-progress-bar': HTMLErikAnimatedProgressBarElement;
+    'erik-radio-button': HTMLErikRadioButtonElement;
+    'erik-radio-group': HTMLErikRadioGroupElement;
     'erik-toggle-button': HTMLErikToggleButtonElement;
   }
 }
@@ -43,6 +66,15 @@ declare global {
 declare namespace LocalJSX {
   interface ErikAnimatedProgressBar {
     'progress'?: number;
+  }
+  interface ErikRadioButton {
+    'checked'?: boolean;
+    'name'?: string;
+    'scale'?: "small" | "medium" | "large";
+  }
+  interface ErikRadioGroup {
+    'label'?: string;
+    'name'?: string;
   }
   interface ErikToggleButton {
     'checked'?: boolean;
@@ -52,6 +84,8 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'erik-animated-progress-bar': ErikAnimatedProgressBar;
+    'erik-radio-button': ErikRadioButton;
+    'erik-radio-group': ErikRadioGroup;
     'erik-toggle-button': ErikToggleButton;
   }
 }
@@ -63,6 +97,8 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'erik-animated-progress-bar': LocalJSX.ErikAnimatedProgressBar & JSXBase.HTMLAttributes<HTMLErikAnimatedProgressBarElement>;
+      'erik-radio-button': LocalJSX.ErikRadioButton & JSXBase.HTMLAttributes<HTMLErikRadioButtonElement>;
+      'erik-radio-group': LocalJSX.ErikRadioGroup & JSXBase.HTMLAttributes<HTMLErikRadioGroupElement>;
       'erik-toggle-button': LocalJSX.ErikToggleButton & JSXBase.HTMLAttributes<HTMLErikToggleButtonElement>;
     }
   }

@@ -9,6 +9,12 @@
   <script type="module" src="/build/stencil-starter-project-name.esm.js"></script>
   <script nomodule src="/build/stencil-starter-project-name.js"></script>
   <base href="/[repo]/">
+  <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.1/fonts.css" />
+  <style>
+    body {
+      font-family: "Avenir Next";
+    }
+  </style>
 </head>
 
 <body>
@@ -27,6 +33,42 @@
   <erik-toggle-button checked></erik-toggle-button>
   <h3>On Disabled</h3>
   <erik-toggle-button checked disabled></erik-toggle-button>
+
+
+  <h2>Radio Group (Horizontal)</h2>
+  <form onsubmit="alert('submitted')">
+    <erik-radio-group name="from">
+      <erik-radio-button value="field" checked>
+        Field
+      </erik-radio-button>
+      <erik-radio-button value="customDate">
+        Custom Date
+      </erik-radio-button>
+      <erik-radio-button value="other">
+        Other
+      </erik-radio-button>
+    </erik-radio-group>
+  </form>
+
+  <p></p>
+
+  <h2>Radio Group (Vertical)</h2>
+  <form onsubmit="alert('submitted')">
+    <erik-radio-group name="from" vertical>
+      <erik-radio-button value="field" checked>
+        Field
+      </erik-radio-button>
+      <erik-radio-button value="customDate">
+        Custom Date
+      </erik-radio-button>
+      <erik-radio-button value="other">
+        Other
+      </erik-radio-button>
+    </erik-radio-group>
+  </form>
+
+  <p></p>
+
 
 </body>
 

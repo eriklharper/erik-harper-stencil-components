@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './core-0014cdee.js';
+import { r as registerInstance, h, H as Host } from './core-1acfe7b3.js';
 
 const ToggleButton = class {
     constructor(hostRef) {

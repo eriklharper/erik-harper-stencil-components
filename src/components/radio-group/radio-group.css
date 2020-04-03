@@ -1,0 +1,7 @@
+:host {
+  display: flex;
+}
+:host([vertical]) {
+  display: flex;
+  flex-direction: column;
+}
