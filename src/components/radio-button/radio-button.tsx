@@ -6,15 +6,17 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class RadioButton {
 
-  @Prop() checked: boolean = false;
+  @Prop({ reflect: true }) checked: boolean = false;
   @Prop() name: string;
-  @Prop() scale: "small" | "medium" | "large";
+  @Prop() scale: "small" | "medium" | "large" = "small";
+  @Prop() value: string;
 
   render() {
     return (
       <Host role="radio" aria-checked={this.checked} scale={this.scale}>
-        <label>
-          <input type="radio" name={this.name} checked={this.checked}></input>
+        <input id={`${this.name}.${this.value}`} type="radio" name={this.name} checked={this.checked} value={this.value}></input>
+        <span id="radio" class={`${this.scale} ${this.checked && "checked"}`}></span>
+        <label htmlFor={`${this.name}.${this.value}`}>
           <slot></slot>
         </label>
       </Host >

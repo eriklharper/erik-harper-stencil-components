@@ -17,10 +17,12 @@ export namespace Components {
     'checked': boolean;
     'name': string;
     'scale': "small" | "medium" | "large";
+    'value': string;
   }
   interface ErikRadioGroup {
     'label': string;
     'name': string;
+    'scale': "small" | "medium" | "large";
   }
   interface ErikToggleButton {
     'checked': boolean;
@@ -71,10 +73,12 @@ declare namespace LocalJSX {
     'checked'?: boolean;
     'name'?: string;
     'scale'?: "small" | "medium" | "large";
+    'value'?: string;
   }
   interface ErikRadioGroup {
     'label'?: string;
     'name'?: string;
+    'scale'?: "small" | "medium" | "large";
   }
   interface ErikToggleButton {
     'checked'?: boolean;

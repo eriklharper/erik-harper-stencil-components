@@ -3,12 +3,14 @@ import { r as registerInstance, h, H as Host, c as getElement } from './core-1ac
 const RadioGroup = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
+        this.scale = "small";
     }
     componentWillLoad() {
         const inputs = Array.from(this.el.querySelectorAll('erik-radio-button'));
         if (inputs) {
             this.inputs = inputs.map(input => {
                 input.name = this.name;
+                input.scale = this.scale;
                 return input;
             });
         }

@@ -10,6 +10,8 @@ export class RadioGroup {
 
   @Prop() label: string;
   @Prop() name: string;
+  @Prop() scale: "small" | "medium" | "large" = "small";
+
   @State() inputs: HTMLErikRadioButtonElement[];
 
   componentWillLoad() {
@@ -17,6 +19,7 @@ export class RadioGroup {
     if (inputs) {
       this.inputs = inputs.map(input => {
         input.name = this.name;
+        input.scale = this.scale;
         return input;
       });
     }
