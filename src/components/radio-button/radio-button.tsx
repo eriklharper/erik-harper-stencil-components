@@ -12,11 +12,12 @@ export class RadioButton {
   @Prop() value: string;
 
   render() {
+    const id = `${this.name}.${this.value}`;
     return (
       <Host role="radio" aria-checked={this.checked} scale={this.scale}>
-        <input id={`${this.name}.${this.value}`} type="radio" name={this.name} checked={this.checked} value={this.value}></input>
+        <input id={id} type="radio" name={this.name} checked={this.checked} value={this.value}></input>
         <span id="radio" class={`${this.scale} ${this.checked && "checked"}`}></span>
-        <label htmlFor={`${this.name}.${this.value}`}>
+        <label htmlFor={id}>
           <slot></slot>
         </label>
       </Host >
