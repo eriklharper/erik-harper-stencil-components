@@ -72,6 +72,7 @@ declare namespace LocalJSX {
   interface ErikRadioButton {
     'checked'?: boolean;
     'name'?: string;
+    'onOnRadioButtonClick'?: (event: CustomEvent<any>) => void;
     'scale'?: "small" | "medium" | "large";
     'value'?: string;
   }

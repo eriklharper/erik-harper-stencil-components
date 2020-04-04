@@ -1,4 +1,4 @@
-import { Component, Host, h, Element, Prop, State } from '@stencil/core';
+import { Component, Host, h, Element, Prop, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'erik-radio-group',
@@ -13,6 +13,12 @@ export class RadioGroup {
   @Prop() scale: "small" | "medium" | "large" = "small";
 
   @State() inputs: HTMLErikRadioButtonElement[];
+
+  @Listen("onRadioButtonClick")
+  onClick(event: CustomEvent): void {
+    this.el.querySelectorAll("erik-radio-button").forEach(radioButton => radioButton.checked = false);
+    (event.target as HTMLErikRadioButtonElement).checked = true;
+  }
 
   componentWillLoad() {
     const inputs = Array.from(this.el.querySelectorAll('erik-radio-button'));

@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './core-1acfe7b3.js';
+import { r as registerInstance, h, H as Host } from './core-e9d777d8.js';
 
 const AnimatedProgressBar = class {
     constructor(hostRef) {
