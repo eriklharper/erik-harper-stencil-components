@@ -11,8 +11,17 @@
     <base href="/[repo]/">
     <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.1/fonts.css" />
     <style>
+        :root {
+            --radio-default: #c2c2c2;
+            --radio-blue: #029fff;
+        }
+
         body {
             font-family: "Avenir Next";
+        }
+
+        label {
+            color: magenta;
         }
     </style>
 </head>
@@ -25,6 +34,7 @@
     <h1>Radio Group</h1>
 
     <h2>Horizontal</h2>
+
     <h3>Small</h3>
     <erik-radio-group name="horizontal-small">
         <erik-radio-button value="field" checked>
@@ -37,6 +47,7 @@
             Other
         </erik-radio-button>
     </erik-radio-group>
+
     <h3>Medium</h3>
     <erik-radio-group name="horizontal-medium" scale="medium">
         <erik-radio-button value="field">
@@ -49,18 +60,22 @@
             Other
         </erik-radio-button>
     </erik-radio-group>
+
     <h3>Large</h3>
-    <erik-radio-group name="horizontal-large" scale="large">
+    <form onsubmit="alert('submitted')"">
+        <erik-radio-group name=" horizontal-large" scale="large">
         <erik-radio-button value="field">
             Field
         </erik-radio-button>
         <erik-radio-button value="customDate">
             Custom Date
         </erik-radio-button>
-        <erik-radio-button value="other" checked>
+        <erik-radio-button value="other">
             Other
         </erik-radio-button>
-    </erik-radio-group>
+        </erik-radio-group>
+        <button type="submit">Submit</button>
+    </form>
 
     <p></p>
 

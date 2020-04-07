@@ -15,6 +15,7 @@ export namespace Components {
   }
   interface ErikRadioButton {
     'checked': boolean;
+    'focused': boolean;
     'name': string;
     'scale': "small" | "medium" | "large";
     'value': string;
@@ -70,8 +71,11 @@ declare namespace LocalJSX {
   }
   interface ErikRadioButton {
     'checked'?: boolean;
+    'focused'?: boolean;
     'name'?: string;
+    'onOnRadioButtonBlur'?: (event: CustomEvent<any>) => void;
     'onOnRadioButtonClick'?: (event: CustomEvent<any>) => void;
+    'onOnRadioButtonFocus'?: (event: CustomEvent<any>) => void;
     'scale'?: "small" | "medium" | "large";
     'value'?: string;
   }

@@ -11,21 +11,36 @@ export class RadioGroup {
   @Prop() name: string;
   @Prop() scale: "small" | "medium" | "large" = "small";
 
-  @State() inputs: HTMLErikRadioButtonElement[];
+  @State() radioButtons: HTMLErikRadioButtonElement[];
 
   @Listen("onRadioButtonClick")
-  onClick(event: CustomEvent): void {
+  onRadioButtonClick(event: CustomEvent): void {
     this.el.querySelectorAll("erik-radio-button").forEach(radioButton => radioButton.checked = false);
     (event.target as HTMLErikRadioButtonElement).checked = true;
+    (event.target as HTMLErikRadioButtonElement).focused = true;
+  }
+
+  @Listen("onRadioButtonFocus")
+  onRadioButtonFocus(event: CustomEvent) {
+    (event.target as HTMLErikRadioButtonElement).focused = true;
+  }
+
+  @Listen("onRadioButtonBlur")
+  onRadioButtonBlur(event: CustomEvent) {
+    (event.target as HTMLErikRadioButtonElement).focused = false;
   }
 
   componentWillLoad() {
-    const inputs = Array.from(this.el.querySelectorAll('erik-radio-button'));
-    if (inputs) {
-      this.inputs = inputs.map(input => {
-        input.name = this.name;
-        input.scale = this.scale;
-        return input;
+    this.passPropsToRadioButtons();
+  }
+
+  passPropsToRadioButtons = () => {
+    const radioButtons = Array.from(this.el.querySelectorAll('erik-radio-button'));
+    if (radioButtons) {
+      this.radioButtons = radioButtons.map(radioButton => {
+        radioButton.name = this.name;
+        radioButton.scale = this.scale;
+        return radioButton;
       });
     }
   }

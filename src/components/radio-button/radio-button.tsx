@@ -1,21 +1,25 @@
-import { Component, Host, h, Listen, Prop, Event, EventEmitter, Element } from '@stencil/core';
+import { Component, Host, h, Listen, Prop, Event, EventEmitter, Element, Watch } from '@stencil/core';
 
 @Component({
   tag: 'erik-radio-button',
   styleUrl: 'radio-button.css',
-  // shadow: true
+  shadow: true
 })
 export class RadioButton {
 
   @Element() el: HTMLElement;
 
   @Prop({ reflect: true }) checked: boolean = false;
+  @Prop({ reflect: true }) focused: boolean = false;
   @Prop() name: string;
   @Prop() scale: "small" | "medium" | "large" = "small";
   @Prop() value: string;
 
-  @Event()
-  onRadioButtonClick: EventEmitter;
+  private input: HTMLInputElement;
+
+  @Event() onRadioButtonClick: EventEmitter;
+  @Event() onRadioButtonFocus: EventEmitter;
+  @Event() onRadioButtonBlur: EventEmitter;
 
   @Listen("click")
   onClick(event: MouseEvent): void {
@@ -24,31 +28,51 @@ export class RadioButton {
     }
   }
 
-  // renderInputOutsideShadowRoot = (container: HTMLElement, id: string) => {
-  //   let input = container.querySelector("input[type='radio']") as HTMLInputElement | null;
-  //   if (!input) {
-  //     input = container.ownerDocument.createElement("input");
-  //     input.type = "radio";
-  //     container.appendChild(input);
-  //   }
-  //   input.checked = this.checked;
-  //   input.id = id;
-  //   input.name = this.name;
-  //   input.value = this.value;
-  // }
+  @Watch('checked')
+  onCheckedChange(newValue: boolean) {
+    this.input.checked = newValue;
+  }
+
+  @Watch('focused')
+  onFocusedChange(focused: boolean) {
+    if (focused) {
+      this.input.focus();
+    } else {
+      this.input.blur();
+    }
+  }
+
+  onInputFocus = () => {
+    this.onRadioButtonFocus.emit();
+  }
+
+  onInputBlur = () => {
+    this.onRadioButtonBlur.emit();
+  }
+
+  componentWillLoad() {
+    this.input = this.el.ownerDocument.createElement("input");
+    this.input.checked = this.checked;
+    this.input.id = `${this.name}.${this.value}`;
+    this.input.name = this.name;
+    this.input.onblur = this.onInputBlur;
+    this.input.onfocus = this.onInputFocus;
+    this.input.style.opacity = "0";
+    this.input.style.position = "absolute";
+    this.input.style.zIndex = "-1";
+    this.input.value = this.value;
+    this.input.type = "radio";
+    this.el.appendChild(this.input);
+  }
 
   render() {
     const id = `${this.name}.${this.value}`;
-    // this.renderInputOutsideShadowRoot(this.el, id);
     return (
-      <Host role="radio" aria-checked={this.checked} scale={this.scale}>
-        <input id={id} type="radio" name={this.name} checked={this.checked} value={this.value}></input>
-        {/* <div class="grid"> */}
-        <span id="radio" class={`${this.scale} ${this.checked && "checked"}`} tabindex="-1"></span>
+      <Host role="radio" aria-checked={this.checked} scale={this.scale} focused={this.focused}>
+        <span id="radio" class={`${this.scale} ${this.checked && "checked"}`}></span>
         <label htmlFor={id}>
           <slot></slot>
         </label>
-        {/* </div> */}
       </Host>
     );
   }
