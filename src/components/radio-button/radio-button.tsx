@@ -43,10 +43,12 @@ export class RadioButton {
     return (
       <Host role="radio" aria-checked={this.checked} scale={this.scale}>
         <input id={id} type="radio" name={this.name} checked={this.checked} value={this.value}></input>
+        {/* <div class="grid"> */}
         <span id="radio" class={`${this.scale} ${this.checked && "checked"}`} tabindex="-1"></span>
         <label htmlFor={id}>
           <slot></slot>
         </label>
+        {/* </div> */}
       </Host>
     );
   }
