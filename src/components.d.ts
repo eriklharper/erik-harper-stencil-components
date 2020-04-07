@@ -20,7 +20,6 @@ export namespace Components {
     'value': string;
   }
   interface ErikRadioGroup {
-    'label': string;
     'name': string;
     'scale': "small" | "medium" | "large";
   }
@@ -77,7 +76,6 @@ declare namespace LocalJSX {
     'value'?: string;
   }
   interface ErikRadioGroup {
-    'label'?: string;
     'name'?: string;
     'scale'?: "small" | "medium" | "large";
   }

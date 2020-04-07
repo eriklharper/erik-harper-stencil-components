@@ -8,7 +8,6 @@ import { Component, Host, h, Element, Prop, State, Listen } from '@stencil/core'
 export class RadioGroup {
   @Element() el!: HTMLElement;
 
-  @Prop() label: string;
   @Prop() name: string;
   @Prop() scale: "small" | "medium" | "large" = "small";
 

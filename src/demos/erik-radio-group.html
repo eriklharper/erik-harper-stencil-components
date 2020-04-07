@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Erik Radio Group</title>
+
+    <script type="module" src="/build/stencil-starter-project-name.esm.js"></script>
+    <script nomodule src="/build/stencil-starter-project-name.js"></script>
+    <base href="/[repo]/">
+    <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.1/fonts.css" />
+    <style>
+        body {
+            font-family: "Avenir Next";
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/">
+        &#60; Back
+    </a>
+
+    <h1>Radio Group</h1>
+
+    <h2>Horizontal</h2>
+    <h3>Small</h3>
+    <erik-radio-group name="horizontal-small">
+        <erik-radio-button value="field" checked>
+            Field
+        </erik-radio-button>
+        <erik-radio-button value="customDate">
+            Custom Date
+        </erik-radio-button>
+        <erik-radio-button value="other">
+            Other
+        </erik-radio-button>
+    </erik-radio-group>
+    <h3>Medium</h3>
+    <erik-radio-group name="horizontal-medium" scale="medium">
+        <erik-radio-button value="field">
+            Field
+        </erik-radio-button>
+        <erik-radio-button value="customDate" checked>
+            Custom Date
+        </erik-radio-button>
+        <erik-radio-button value="other">
+            Other
+        </erik-radio-button>
+    </erik-radio-group>
+    <h3>Large</h3>
+    <erik-radio-group name="horizontal-large" scale="large">
+        <erik-radio-button value="field">
+            Field
+        </erik-radio-button>
+        <erik-radio-button value="customDate">
+            Custom Date
+        </erik-radio-button>
+        <erik-radio-button value="other" checked>
+            Other
+        </erik-radio-button>
+    </erik-radio-group>
+
+    <p></p>
+
+    <h2>Vertical</h2>
+    <h3>Small</h3>
+    <erik-radio-group name="vertical-small" vertical>
+        <erik-radio-button value="field" checked>
+            Field
+        </erik-radio-button>
+        <erik-radio-button value="customDate">
+            Custom Date
+        </erik-radio-button>
+        <erik-radio-button value="other">
+            Other
+        </erik-radio-button>
+    </erik-radio-group>
+    <h3>Medium</h3>
+    <erik-radio-group name="vertical-medium" scale="medium" vertical>
+        <erik-radio-button value="field">
+            Field
+        </erik-radio-button>
+        <erik-radio-button value="customDate" checked>
+            Custom Date
+        </erik-radio-button>
+        <erik-radio-button value="other">
+            Other
+        </erik-radio-button>
+    </erik-radio-group>
+    <button type="submit">Submit</button>
+    <h3>Large</h3>
+    <erik-radio-group name="vertical-large" scale="large" vertical>
+        <erik-radio-button value="field">
+            Field
+        </erik-radio-button>
+        <erik-radio-button value="customDate">
+            Custom Date
+        </erik-radio-button>
+        <erik-radio-button value="other" checked>
+            Other
+        </erik-radio-button>
+    </erik-radio-group>
+
+</body>
+
+</html>
