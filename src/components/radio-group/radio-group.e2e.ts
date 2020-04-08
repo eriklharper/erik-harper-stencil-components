@@ -34,4 +34,27 @@ describe('erik-radio-group', () => {
     expect(name).toBe("radio");
     expect(scale).toBe("small");
   });
+  it('clicking a radio updates its checked status', async () => {
+    const page = await newE2EPage();
+    await page.setContent(`
+      <erik-radio-group name="radio">
+        <erik-radio-button id="first" value="one" checked>
+              One
+        </erik-radio-button>
+        <erik-radio-button id="second" value="two">
+            Two
+        </erik-radio-button>
+      </erik-radio-group>
+    `);
+
+    const second = await page.find('erik-radio-button#second');
+    await second.click();
+    const secondChecked = await second.getProperty("checked");
+    expect(secondChecked).toBe(true);
+
+    const first = await page.find('erik-radio-button#first');
+    await first.click();
+    const firstChecked = await first.getProperty("checked");
+    expect(firstChecked).toBe(true);
+  });
 });
