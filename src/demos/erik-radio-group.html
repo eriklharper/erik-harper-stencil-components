@@ -20,8 +20,13 @@
             font-family: "Avenir Next";
         }
 
+        /* These styles won't apply because <radio-button> is inside a shadow root! */
         label {
             color: magenta;
+        }
+        /* These styles won't work because we're applying these styles inline to the input, which override the specificity */
+        input[type=radio] {
+            opacity: 1;
         }
     </style>
 </head>

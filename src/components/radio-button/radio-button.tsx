@@ -51,6 +51,12 @@ export class RadioButton {
   }
 
   componentWillLoad() {
+    this.renderHiddenRadioInput();
+  }
+
+  renderHiddenRadioInput() {
+    // Rendering a hidden radio input outside Shadow DOM so it can participate in form submissions
+    // @link https://www.hjorthhansen.dev/shadow-dom-form-participation/
     this.input = this.el.ownerDocument.createElement("input");
     this.input.checked = this.checked;
     this.input.id = `${this.name}.${this.value}`;
@@ -68,8 +74,8 @@ export class RadioButton {
   render() {
     const id = `${this.name}.${this.value}`;
     return (
-      <Host role="radio" aria-checked={this.checked} scale={this.scale} focused={this.focused}>
-        <span id="radio" class={`${this.scale} ${this.checked && "checked"}`}></span>
+      <Host role="radio" aria-checked={this.checked} checked={this.checked} focused={this.focused} scale={this.scale}>
+        <span id="radio"></span>
         <label htmlFor={id}>
           <slot></slot>
         </label>

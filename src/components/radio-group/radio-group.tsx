@@ -10,6 +10,7 @@ export class RadioGroup {
 
   @Prop() name: string;
   @Prop() scale: "small" | "medium" | "large" = "small";
+  @Prop({ reflect: true }) vertical: boolean = false;
 
   @State() radioButtons: HTMLErikRadioButtonElement[];
 
@@ -22,6 +23,7 @@ export class RadioGroup {
 
   @Listen("onRadioButtonFocus")
   onRadioButtonFocus(event: CustomEvent) {
+    (event.target as HTMLErikRadioButtonElement).checked = true;
     (event.target as HTMLErikRadioButtonElement).focused = true;
   }
 
@@ -47,7 +49,7 @@ export class RadioGroup {
 
   render() {
     return (
-      <Host>
+      <Host scale={this.scale} vertical={this.vertical}>
         <slot></slot>
       </Host>
     );

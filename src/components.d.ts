@@ -23,6 +23,7 @@ export namespace Components {
   interface ErikRadioGroup {
     'name': string;
     'scale': "small" | "medium" | "large";
+    'vertical': boolean;
   }
   interface ErikToggleButton {
     'checked': boolean;
@@ -82,6 +83,7 @@ declare namespace LocalJSX {
   interface ErikRadioGroup {
     'name'?: string;
     'scale'?: "small" | "medium" | "large";
+    'vertical'?: boolean;
   }
   interface ErikToggleButton {
     'checked'?: boolean;

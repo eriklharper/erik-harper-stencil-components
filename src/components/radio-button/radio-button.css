@@ -7,20 +7,22 @@
   display: inline-block;
   border-radius: 100%;
   box-shadow: inset 0 0 0 1px var(--radio-default);
-  outline: none;
+  cursor: pointer;
   margin-right: 7px;
+}
+label {
+  cursor: pointer;
 }
 
 /* Small (Default) */
-#radio.small {
+:host([scale=small]) #radio {
   height: 14px;
   width: 14px;
 }
-#radio.small.checked {
+:host([scale=small][checked]) #radio {
   box-shadow: inset 0 0 0 5px var(--radio-blue);
 }
-:host([focused]) #radio.small.checked {
-  outline: none;
+:host([scale=small][focused]) #radio {
   box-shadow:
     inset 0 0 0 5px var(--radio-blue),
     0 0 0 1px white,
@@ -28,15 +30,14 @@
 }
 
 /* Medium */
-#radio.medium {
+:host([scale=medium]) #radio {
   height: 18px;
   width: 18px;
 }
-#radio.medium.checked {
+:host([scale=medium][checked]) #radio {
   box-shadow: inset 0 0 0 6px var(--radio-blue);
 }
-:host([focused]) #radio.medium.checked {
-  outline: none;
+:host([scale=medium][focused]) #radio {
   box-shadow:
     inset 0 0 0 6px var(--radio-blue),
     0 0 0 1px white,
@@ -44,18 +45,16 @@
 }
 
 /* Large */
-#radio.large {
+:host([scale=large]) #radio {
   height: 22px;
   width: 22px;
 }
-#radio.large.checked {
+:host([scale=large][checked]) #radio {
   box-shadow: inset 0 0 0 7px var(--radio-blue);
 }
-:host([focused]) #radio.large.checked {
-  outline: none;
+:host([scale=large][focused]) #radio {
   box-shadow:
     inset 0 0 0 7px var(--radio-blue),
     0 0 0 1px white,
     0 0 0 3px var(--radio-blue);
 }
-
