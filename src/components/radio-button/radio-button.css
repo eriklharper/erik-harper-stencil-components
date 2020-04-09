@@ -14,6 +14,10 @@ label {
   cursor: pointer;
 }
 
+:host(:hover) #radio {
+  box-shadow: inset 0 0 0 2px var(--radio-blue);
+}
+
 /* Small (Default) */
 :host([scale=small]) #radio {
   height: 14px;
@@ -22,6 +26,7 @@ label {
 :host([scale=small][checked]) #radio {
   box-shadow: inset 0 0 0 5px var(--radio-blue);
 }
+:host(:hover[scale=small][checked]) #radio,
 :host([scale=small][focused]) #radio {
   box-shadow:
     inset 0 0 0 5px var(--radio-blue),
@@ -37,6 +42,7 @@ label {
 :host([scale=medium][checked]) #radio {
   box-shadow: inset 0 0 0 6px var(--radio-blue);
 }
+:host(:hover[scale=medium][checked]) #radio,
 :host([scale=medium][focused]) #radio {
   box-shadow:
     inset 0 0 0 6px var(--radio-blue),
@@ -52,6 +58,7 @@ label {
 :host([scale=large][checked]) #radio {
   box-shadow: inset 0 0 0 7px var(--radio-blue);
 }
+:host(:hover[scale=large][checked]) #radio,
 :host([scale=large][focused]) #radio {
   box-shadow:
     inset 0 0 0 7px var(--radio-blue),

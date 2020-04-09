@@ -47,14 +47,19 @@ describe('erik-radio-group', () => {
       </erik-radio-group>
     `);
 
-    const second = await page.find('erik-radio-button#second');
-    await second.click();
-    const secondChecked = await second.getProperty("checked");
-    expect(secondChecked).toBe(true);
-
     const first = await page.find('erik-radio-button#first');
+    const second = await page.find('erik-radio-button#second');
+
+    await second.click();
+    await page.waitForChanges();
+    
+    expect(await first.getProperty("checked")).toBe(false);
+    expect(await second.getProperty("checked")).toBe(true);
+    
     await first.click();
-    const firstChecked = await first.getProperty("checked");
-    expect(firstChecked).toBe(true);
+    await page.waitForChanges();
+    
+    expect(await first.getProperty("checked")).toBe(true);
+    expect(await second.getProperty("checked")).toBe(false);
   });
 });

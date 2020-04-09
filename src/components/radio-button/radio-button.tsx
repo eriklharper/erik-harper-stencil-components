@@ -12,7 +12,7 @@ export class RadioButton {
   @Prop({ reflect: true }) checked: boolean = false;
   @Prop({ reflect: true }) focused: boolean = false;
   @Prop() name: string;
-  @Prop() scale: "small" | "medium" | "large" = "small";
+  @Prop({ reflect: true }) scale: "small" | "medium" | "large" = "small";
   @Prop() value: string;
 
   private input: HTMLInputElement;
@@ -74,7 +74,7 @@ export class RadioButton {
   render() {
     const id = `${this.name}.${this.value}`;
     return (
-      <Host role="radio" aria-checked={this.checked} checked={this.checked} focused={this.focused} scale={this.scale}>
+      <Host role="radio" aria-checked={this.checked}>
         <span id="radio"></span>
         <label htmlFor={id}>
           <slot></slot>
