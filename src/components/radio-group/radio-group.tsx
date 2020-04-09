@@ -8,6 +8,7 @@ import { Component, Host, h, Element, Prop, Listen } from '@stencil/core';
 export class RadioGroup {
   @Element() el!: HTMLElement;
 
+  @Prop() disabled: boolean = false;
   @Prop() name: string;
   @Prop() scale: "small" | "medium" | "large" = "small";
   @Prop({ reflect: true }) vertical: boolean = false;
@@ -38,6 +39,7 @@ export class RadioGroup {
     const radioButtons = Array.from(this.el.querySelectorAll('erik-radio-button'));
     if (radioButtons) {
       radioButtons.forEach(radioButton => {
+        radioButton.disabled = radioButton.hasAttribute("disabled") ? radioButton.disabled : this.disabled;
         radioButton.name = this.name;
         radioButton.scale = this.scale;
         return radioButton;

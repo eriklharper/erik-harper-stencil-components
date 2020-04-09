@@ -10,6 +10,7 @@ export class RadioButton {
   @Element() el: HTMLElement;
 
   @Prop({ reflect: true }) checked: boolean = false;
+  @Prop({ reflect: true }) disabled: boolean = false;
   @Prop({ reflect: true }) focused: boolean = false;
   @Prop() name: string;
   @Prop({ reflect: true }) scale: "small" | "medium" | "large" = "small";
@@ -23,7 +24,7 @@ export class RadioButton {
 
   @Listen("click")
   onClick(event: MouseEvent): void {
-    if ((event.currentTarget as HTMLErikRadioButtonElement).localName === "erik-radio-button") {
+    if (!this.disabled && (event.currentTarget as HTMLErikRadioButtonElement).localName === "erik-radio-button") {
       this.onRadioButtonClick.emit();
     }
   }
@@ -59,6 +60,7 @@ export class RadioButton {
     // @link https://www.hjorthhansen.dev/shadow-dom-form-participation/
     this.input = this.el.ownerDocument.createElement("input");
     this.input.checked = this.checked;
+    this.input.disabled = this.disabled;
     this.input.id = `${this.name}.${this.value}`;
     this.input.name = this.name;
     this.input.onblur = this.onInputBlur;
