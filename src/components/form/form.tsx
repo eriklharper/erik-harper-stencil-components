@@ -21,7 +21,6 @@ export class Form {
     for (var pair of event.formData.entries()) {
       data[pair[0]] = pair[1];
     }
-    console.log(data);
     alert(`Submitted with Form Data: ${JSON.stringify(data)}`)
   }
 
