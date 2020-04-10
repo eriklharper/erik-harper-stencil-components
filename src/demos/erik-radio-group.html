@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://webapps-cdn.esri.com/CDN/fonts/v1.4.1/fonts.css" />
     <style>
         :root {
-            --radio-default: #c2c2c2;
-            --radio-blue: #029fff;
+            --radio-default: #AAAAAA;
+            --radio-blue: #007AC2;
         }
 
         body {
@@ -37,168 +37,172 @@
         &#60; Back
     </a>
 
-    <h1>Radio Group</h1>
+    <erik-form>
 
-    <h2>Horizontal</h2>
+        <h1>Radio Group</h1>
 
-    <h3>Small</h3>
-    <erik-radio-group name="horizontal-small">
-        <erik-radio-button value="field" checked>
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h2>Horizontal</h2>
 
-    <h4>All Options Disabled</h4>
-    <erik-radio-group name="horizontal-small-disabled" disabled>
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate" checked>
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h3>Small</h3>
+        <erik-radio-group name="horizontal-small">
+            <erik-radio-button value="field" checked>
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h4>Single Option Disabled</h4>
-    <erik-radio-group name="horizontal-small-disabled-single">
-        <erik-radio-button value="field" disabled>
-            Disabled
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other" checked>
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h4>All Options Disabled</h4>
+        <erik-radio-group name="horizontal-small-disabled" disabled>
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate" checked>
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h3>Medium</h3>
-    <erik-radio-group name="horizontal-medium" scale="medium">
-        <erik-radio-button value="field" checked>
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h4>Single Option Disabled</h4>
+        <erik-radio-group name="horizontal-small-disabled-single">
+            <erik-radio-button value="field" disabled>
+                Disabled
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other" checked>
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h4>All Options Disabled</h4>
-    <erik-radio-group name="horizontal-medium-disabled" scale="medium" disabled>
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate" checked>
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h3>Medium</h3>
+        <erik-radio-group name="horizontal-medium" scale="medium">
+            <erik-radio-button value="field" checked>
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h4>Single Option Disabled</h4>
-    <erik-radio-group name="horizontal-medium-disabled" scale="medium">
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate" disabled>
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other" checked>
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h4>All Options Disabled</h4>
+        <erik-radio-group name="horizontal-medium-disabled" scale="medium" disabled>
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate" checked>
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h3>Large</h3>
-    <erik-radio-group name=" horizontal-large" scale="large">
-        <erik-radio-button value="field" checked>
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h4>Single Option Disabled</h4>
+        <erik-radio-group name="horizontal-medium-disabled" scale="medium">
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate" disabled>
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other" checked>
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h4>All Options Disabled</h4>
-    <erik-radio-group name=" horizontal-large-disabled" scale="large" disabled>
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate" checked>
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h3>Large</h3>
+        <erik-radio-group name=" horizontal-large" scale="large">
+            <erik-radio-button value="field" checked>
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h4>Single Option Disabled</h4>
-    <erik-radio-group name=" horizontal-large-disabled-single" scale="large">
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other" checked disabled>
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <h4>All Options Disabled</h4>
+        <erik-radio-group name=" horizontal-large-disabled" scale="large" disabled>
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate" checked>
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <p></p>
+        <h4>Single Option Disabled</h4>
+        <erik-radio-group name=" horizontal-large-disabled-single" scale="large">
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other" checked disabled>
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
 
-    <h2>Vertical</h2>
-    <h3>Small</h3>
-    <erik-radio-group name="vertical-small" vertical>
-        <erik-radio-button value="field" checked>
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
-    <h3>Medium</h3>
-    <erik-radio-group name="vertical-medium" scale="medium" vertical>
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate" checked>
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other">
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
-    <button type="submit">Submit</button>
-    <h3>Large</h3>
-    <erik-radio-group name="vertical-large" scale="large" vertical>
-        <erik-radio-button value="field">
-            Field
-        </erik-radio-button>
-        <erik-radio-button value="customDate">
-            Custom Date
-        </erik-radio-button>
-        <erik-radio-button value="other" checked>
-            Other
-        </erik-radio-button>
-    </erik-radio-group>
+        <p></p>
 
+        <h2>Vertical</h2>
+        <h3>Small</h3>
+        <erik-radio-group name="vertical-small" vertical>
+            <erik-radio-button value="field" checked>
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
+        <h3>Medium</h3>
+        <erik-radio-group name="vertical-medium" scale="medium" vertical>
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate" checked>
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other">
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
+        <button type="submit">Submit</button>
+        <h3>Large</h3>
+        <erik-radio-group name="vertical-large" scale="large" vertical>
+            <erik-radio-button value="field">
+                Field
+            </erik-radio-button>
+            <erik-radio-button value="customDate">
+                Custom Date
+            </erik-radio-button>
+            <erik-radio-button value="other" checked>
+                Other
+            </erik-radio-button>
+        </erik-radio-group>
+
+        <button type="submit">Submit</button>
+    </erik-form>
 </body>
 
 </html>

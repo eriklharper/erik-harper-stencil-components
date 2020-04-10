@@ -13,6 +13,7 @@ export namespace Components {
   interface ErikAnimatedProgressBar {
     'progress': number;
   }
+  interface ErikForm {}
   interface ErikRadioButton {
     'checked': boolean;
     'disabled': boolean;
@@ -43,6 +44,12 @@ declare global {
     new (): HTMLErikAnimatedProgressBarElement;
   };
 
+  interface HTMLErikFormElement extends Components.ErikForm, HTMLStencilElement {}
+  var HTMLErikFormElement: {
+    prototype: HTMLErikFormElement;
+    new (): HTMLErikFormElement;
+  };
+
   interface HTMLErikRadioButtonElement extends Components.ErikRadioButton, HTMLStencilElement {}
   var HTMLErikRadioButtonElement: {
     prototype: HTMLErikRadioButtonElement;
@@ -62,6 +69,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'erik-animated-progress-bar': HTMLErikAnimatedProgressBarElement;
+    'erik-form': HTMLErikFormElement;
     'erik-radio-button': HTMLErikRadioButtonElement;
     'erik-radio-group': HTMLErikRadioGroupElement;
     'erik-toggle-button': HTMLErikToggleButtonElement;
@@ -72,6 +80,7 @@ declare namespace LocalJSX {
   interface ErikAnimatedProgressBar {
     'progress'?: number;
   }
+  interface ErikForm {}
   interface ErikRadioButton {
     'checked'?: boolean;
     'disabled'?: boolean;
@@ -97,6 +106,7 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'erik-animated-progress-bar': ErikAnimatedProgressBar;
+    'erik-form': ErikForm;
     'erik-radio-button': ErikRadioButton;
     'erik-radio-group': ErikRadioGroup;
     'erik-toggle-button': ErikToggleButton;
@@ -110,6 +120,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'erik-animated-progress-bar': LocalJSX.ErikAnimatedProgressBar & JSXBase.HTMLAttributes<HTMLErikAnimatedProgressBarElement>;
+      'erik-form': LocalJSX.ErikForm & JSXBase.HTMLAttributes<HTMLErikFormElement>;
       'erik-radio-button': LocalJSX.ErikRadioButton & JSXBase.HTMLAttributes<HTMLErikRadioButtonElement>;
       'erik-radio-group': LocalJSX.ErikRadioGroup & JSXBase.HTMLAttributes<HTMLErikRadioGroupElement>;
       'erik-toggle-button': LocalJSX.ErikToggleButton & JSXBase.HTMLAttributes<HTMLErikToggleButtonElement>;
