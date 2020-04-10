@@ -14,14 +14,14 @@ export class Form {
     event.preventDefault();
     new FormData(this.form);
   }
-  
+
   @Listen("formdata")
   onFormData(event: any) {
     let data = {};
     for (var pair of event.formData.entries()) {
       data[pair[0]] = pair[1];
     }
-    alert(`Submitted with Form Data: ${JSON.stringify(data)}`)
+    alert(JSON.stringify(data, null, 2))
   }
 
   render() {
