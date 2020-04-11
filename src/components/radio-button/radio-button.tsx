@@ -13,7 +13,7 @@ export class RadioButton {
   @Prop({ reflect: true }) disabled: boolean = false;
   @Prop({ reflect: true }) focused: boolean = false;
   @Prop() name: string;
-  @Prop({ reflect: true }) scale: "small" | "medium" | "large" = "small";
+  @Prop({ reflect: true }) scale: "xsmall" | "small" | "medium" | "large" = "small";
   @Prop() value: string;
 
   private input: HTMLInputElement;

@@ -20,6 +20,10 @@
             font-family: "Avenir Next";
         }
 
+        fieldset {
+            margin-bottom: 20px;
+        }
+
         /* These styles won't apply because <radio-button> is inside a shadow root! */
         label {
             color: magenta;
@@ -41,165 +45,381 @@
 
         <h1>Radio Group</h1>
 
-        <h2>Horizontal</h2>
+        <h3>scale="xsmall"</h3>
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group scale="xsmall" name="horizontal-xsmall">
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h3>Small</h3>
-        <erik-radio-group name="horizontal-small">
-            <erik-radio-button value="field" checked>
-                Field
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group scale="xsmall" name="horizontal-xsmall-disabled" disabled>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second"" checked>
+                Second Option
             </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+            <erik-radio-button value=" third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h4>All Options Disabled</h4>
-        <erik-radio-group name="horizontal-small-disabled" disabled>
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate" checked>
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group scale="xsmall" name="horizontal-xsmall-disabled-single">
+                <erik-radio-button value="first" disabled>
+                    Disabled
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h4>Single Option Disabled</h4>
-        <erik-radio-group name="horizontal-small-disabled-single">
-            <erik-radio-button value="field" disabled>
-                Disabled
-            </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other" checked>
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <h3>scale="small" (default)</h3>
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group name="horizontal-small">
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h3>Medium</h3>
-        <erik-radio-group name="horizontal-medium" scale="medium">
-            <erik-radio-button value="field" checked>
-                Field
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group name="horizontal-small-disabled" disabled>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second"" checked>
+                Second Option
             </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+            <erik-radio-button value=" third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h4>All Options Disabled</h4>
-        <erik-radio-group name="horizontal-medium-disabled" scale="medium" disabled>
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate" checked>
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group name="horizontal-small-disabled-single">
+                <erik-radio-button value="first" disabled>
+                    Disabled
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h4>Single Option Disabled</h4>
-        <erik-radio-group name="horizontal-medium-disabled" scale="medium">
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate" disabled>
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other" checked>
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <h3>scale="medium"</h3>
 
-        <h3>Large</h3>
-        <erik-radio-group name=" horizontal-large" scale="large">
-            <erik-radio-button value="field" checked>
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group name="horizontal-medium" scale="medium">
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h4>All Options Disabled</h4>
-        <erik-radio-group name=" horizontal-large-disabled" scale="large" disabled>
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate" checked>
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group name="horizontal-medium-disabled" scale="medium" disabled>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" checked>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <h4>Single Option Disabled</h4>
-        <erik-radio-group name=" horizontal-large-disabled-single" scale="large">
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other" checked disabled>
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group name="horizontal-medium-disabled" scale="medium">
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" disabled>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
-        <p></p>
+        <h3>scale="large"</h3>
+
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group name=" horizontal-large" scale="large">
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group name=" horizontal-large-disabled" scale="large" disabled>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" checked>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group name=" horizontal-large-disabled-single" scale="large">
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked disabled>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
         <h2>Vertical</h2>
-        <h3>Small</h3>
-        <erik-radio-group name="vertical-small" vertical>
-            <erik-radio-button value="field" checked>
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
-        <h3>Medium</h3>
-        <erik-radio-group name="vertical-medium" scale="medium" vertical>
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate" checked>
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other">
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
-        <button type="submit">Submit</button>
-        <h3>Large</h3>
-        <erik-radio-group name="vertical-large" scale="large" vertical>
-            <erik-radio-button value="field">
-                Field
-            </erik-radio-button>
-            <erik-radio-button value="customDate">
-                Custom Date
-            </erik-radio-button>
-            <erik-radio-button value="other" checked>
-                Other
-            </erik-radio-button>
-        </erik-radio-group>
+
+        <h3>scale="xsmall"</h3>
+
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group scale="xsmall" name="vertical-xsmall" vertical>
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group scale="xsmall" name="vertical-xsmall-disabled" vertical disabled>
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group scale="xsmall" name="vertical-xsmall-single-disabled" vertical>
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" disabled>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <h3>scale="small" (default)</h3>
+
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group name="vertical-small" vertical>
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group name="vertical-small-disabled" vertical disabled>
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group name="vertical-small-single-disabled" vertical>
+                <erik-radio-button value="first" checked>
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" disabled>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <h3>scale="medium"</h3>
+
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group name="vertical-medium" scale="medium" vertical>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" checked>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group name="vertical-medium-disabled" scale="medium" vertical disabled>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" checked>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group name="vertical-medium-single-disabled" scale="medium" vertical>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" checked disabled>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third">
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <h3>scale="large"</h3>
+
+        <fieldset>
+            <legend>Default</legend>
+            <erik-radio-group name="vertical-large" scale="large" vertical>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Disabled</legend>
+            <erik-radio-group name="vertical-large-disabled" scale="large" vertical disabled>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second">
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
+
+        <fieldset>
+            <legend>Single Option Disabled</legend>
+            <erik-radio-group name="vertical-large-single-disabled" scale="large" vertical>
+                <erik-radio-button value="first">
+                    First Option
+                </erik-radio-button>
+                <erik-radio-button value="second" disabled>
+                    Second Option
+                </erik-radio-button>
+                <erik-radio-button value="third" checked>
+                    Third Option
+                </erik-radio-button>
+            </erik-radio-group>
+        </fieldset>
 
         <button type="submit">Submit</button>
     </erik-form>

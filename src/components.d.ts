@@ -19,7 +19,7 @@ export namespace Components {
     'disabled': boolean;
     'focused': boolean;
     'name': string;
-    'scale': "small" | "medium" | "large";
+    'scale': "xsmall" | "small" | "medium" | "large";
     'value': string;
   }
   interface ErikRadioGroup {
@@ -89,7 +89,7 @@ declare namespace LocalJSX {
     'onOnRadioButtonBlur'?: (event: CustomEvent<any>) => void;
     'onOnRadioButtonClick'?: (event: CustomEvent<any>) => void;
     'onOnRadioButtonFocus'?: (event: CustomEvent<any>) => void;
-    'scale'?: "small" | "medium" | "large";
+    'scale'?: "xsmall" | "small" | "medium" | "large";
     'value'?: string;
   }
   interface ErikRadioGroup {
