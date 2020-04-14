@@ -37,7 +37,7 @@ export class RadioGroup {
 
   passPropsToRadioButtons = () => {
     const radioButtons = Array.from(this.el.querySelectorAll('erik-radio-button'));
-    if (radioButtons) {
+    if (radioButtons && radioButtons.length > 0) {
       radioButtons.forEach(radioButton => {
         radioButton.disabled = radioButton.hasAttribute("disabled") ? radioButton.disabled : this.disabled;
         radioButton.name = this.name;
