@@ -77,7 +77,7 @@ export class RadioButton {
     const id = `${this.name}.${this.value}`;
     return (
       <Host role="radio" aria-checked={this.checked}>
-        <span id="radio"></span>
+        <div id="radio"></div>
         <label htmlFor={id}>
           <slot></slot>
         </label>
